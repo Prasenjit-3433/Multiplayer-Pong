@@ -1,0 +1,23 @@
+{
+  "name": "multiplayer-pong",
+  "version": "1.0.0",
+  "description": "A multi-player pong game built on top of WebSocket protocol 🎮",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prasenjit-3433/Multiplayer-Pong.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Prasenjit-3433/Multiplayer-Pong/issues"
+  },
+  "homepage": "https://github.com/Prasenjit-3433/Multiplayer-Pong#readme",
+  "dependencies": {
+    "socket.io": "^4.6.1"
+  }
+}

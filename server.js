@@ -1,5 +1,10 @@
 const server = require('http').createServer();
-const io = require('socket.io')(server);
+const io = require('socket.io')(server, {
+    cors: {
+        origin: '*',
+        methods: ['GET', 'POST'],
+    }
+});
 
 const PORT = 3000;
 
@@ -7,6 +12,18 @@ server.listen(PORT, () => {
     console.log(`Listening on port ${PORT}...`);
 });
 
+let readyPlayersCount = 0;
+
 io.on('connection', (socket) => {
-    console.log('a user is connected!')
+    console.log('a user is connected!', socket.id);
+
+    socket.on('ready', () => {
+        console.log('Player ready: ', socket.id);
+
+        readyPlayersCount++;
+
+        if (readyPlayersCount === 2) {
+            // broadcast('startGame')
+        }
+    });
 });
